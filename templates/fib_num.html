@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Fibonacci number series</h3>
+
+ <form class="" method="POST">
+   {{fib_form.hidden_tag()}}
+   Get the series up to terms
+
+   {{fib_form.int_input()}}
+   <br>
+
+   {{fib_form.get()}}
+
+ </form>
+
+
+{% if terms %}
+{% for items in fib_list %}
+{{items}}
+
+{% endfor %}
+<br>
+<a href="{{url_for('fib_nums')}}">
+<input  type="button" class="button is-primary is-rounded is-outlined" name="reset" value="Reset">
+</a>
+{% else %}
+
+{%endif%}
+{% endblock %}

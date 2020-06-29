@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Welcome to BMI Calculator!</h3>
+
+    <form class="" action="{{url_for('body_mass_index')}}">
+      <label for="weight">Enter weight in Kgs</label>
+      <input type="number" class="input is-primary input is-rounded has-text-centered" name="weight" step="0.001">
+      <br>
+      <label for="height">Enter height in meters</label>
+      <input type="number"  class="input is-primary input is-rounded has-text-centered" name="height" step="0.001">
+      <br>
+      <input type="submit" class="button is-primary is-rounded is-outlined" value="Calculate">
+    </form>
+
+    <div class="">
+      {% if run %}
+      <p>Your Body Mass Index is {{bmi}}</p>
+      <a href="{{url_for('bmi_home')}}">
+      <input type="button"  class="button is-primary is-rounded is-outlined" name="reset" value="Reset">
+      </a>
+      {% else %}
+      {% endif %}
+    </div>
+
+
+{% endblock %}

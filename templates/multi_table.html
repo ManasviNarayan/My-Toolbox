@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Multiplication Tables</h3>
+    <form  method="POST">
+      {{ multi_form.hidden_tag()}}
+      Get multiplication table of:
+        {{multi_form.int_input(class="input is-primary input is-rounded has-text-centered")}}
+        {{multi_form.get(class="button is-primary is-rounded is-outlined")}}
+    </form>
+
+    <p>
+      {% if m_num %}
+      {% for i in range(1, 11)%}
+      {{m_num}} x {{i}} = {{m_num * i}}<br>
+      {% endfor %}
+      <a href="{{url_for('multi_table')}}">
+      <input type="button" class="button is-primary is-rounded is-outlined" name="reset" value="Reset">
+      </a>
+      {% else %}
+
+      {% endif %}
+    </p>
+  {% endblock %}

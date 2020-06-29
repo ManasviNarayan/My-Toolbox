@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Prime number checker</h3>
+
+
+
+<form  method="POST">
+  {{ prime_form.hidden_tag()}}
+  Enter Number:
+  {{prime_form.int_input(class="input is-primary input is-rounded has-text-centered")}}
+  {{prime_form.check(class="button is-primary is-rounded is-outlined")}}
+
+</form>
+
+<p>
+  {% if inp_num %}
+  {{string}} <br>
+  <a href="{{url_for('prime_num')}}">
+  <input class="button is-primary is-rounded is-outlined" type="button" name="reset" value="Reset">
+  </a>
+  {% else %}
+  {% endif %}
+</p>
+
+{% endblock %}

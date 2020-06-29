@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Check Leap Year</h3>
+
+<form method="POST">
+  {{leap_form.hidden_tag()}}
+  Enter Year:
+  {{leap_form.int_input()}}
+  <br>
+  {{leap_form.check()}}
+</form>
+
+{% if show %}
+{% if check %}
+<p>{{year}} is a leap year!</p>
+{% else %}
+<p>{{year}} is not a leap year!</p>
+{% endif %}
+<br>
+<a href="{{url_for('leap')}}">
+<input  type="button" class="button is-primary is-rounded is-outlined" name="reset" value="Reset">
+</a>
+{% else %}
+
+{% endif %}
+
+
+
+{% endblock %}

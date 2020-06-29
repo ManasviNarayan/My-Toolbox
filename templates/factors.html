@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Factors of a number</h3>
+
+<form  method="POST">
+{{factor_form.hidden_tag()}}
+Number:
+{{factor_form.int_input(class="input is-primary input is-rounded has-text-centered")}}
+{{factor_form.get(class="button is-primary is-rounded is-outlined")}}
+
+</form>
+
+<div class="">
+
+{% if num %}
+Factors:<br>
+{% for item in fac %}
+{{item}},
+{% endfor %}
+<br>
+<a href="{{url_for('factors')}}">
+<input  type="button" class="button is-primary is-rounded is-outlined" name="reset" value="Reset">
+</a>
+
+{% else %}
+
+{% endif %}
+
+</div>
+{% endblock %}

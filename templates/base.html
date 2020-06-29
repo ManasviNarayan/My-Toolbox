@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>My Math Toolbox</title>
+      <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+  </head>
+  <body class="has-text-centered ">
+<div class=>
+    <h1 class=" main_head panel-heading has-text-primary has-text-centered">My Toolbox</h1>
+
+
+
+</div>
+<a href="{{url_for('index')}}">
+<input class=" button is-primary is-rounded is-outlined " type="submit" name="" value="HOME">
+</a>
+{% block content %}
+
+{%endblock%}
+
+</body>
+</html>
