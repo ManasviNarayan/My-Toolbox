@@ -15,8 +15,9 @@ app.config['SECRET_KEY']= 'myseckey'
 @app.route('/')
 def index():
     choices = ['BMI Calculator', 'Multiplication Tables', 'Check Divisibility',
-            'Prime Number Check', 'Factors of a number', 'Check Leap Year',
-            'Fibonacci Series']
+            'Check Prime Number', 'Factors of a number', 'Check Leap Year',
+            'Fibonacci Series', 'HCF and LCM', 'Factorial of a Number',
+            'Find x^n']
     choices.sort()
     return render_template('index.html', choices = choices)
 
@@ -35,7 +36,7 @@ def choice():
     elif val == 'Check Divisibility':
         return redirect(url_for('div_check'))
 
-    elif val == 'Prime Number Check':
+    elif val == 'Check Prime Number':
         return redirect(url_for('prime_num'))
 
     elif val == 'Factors of a number':
@@ -47,6 +48,14 @@ def choice():
     elif val == 'Fibonacci Series':
         return redirect(url_for('fib_nums'))
 
+    elif val == 'HCF and LCM':
+        return redirect(url_for('hcf_lcm'))
+
+    elif val == 'Factorial of a Number':
+        return redirect(url_for('factorial'))
+
+    elif val == 'Find x^n':
+        return redirect(url_for('power'))
 
 
 '''**************************************************************
@@ -250,6 +259,76 @@ def fib_nums():
                             fib_form=fib_form, fib_list=fib_list, a1=a1, a2=a2)
 
 
+
+@app.route('/HCF and LCM', methods = ['GET', 'POST'])
+def hcf_lcm():
+    show = False;
+    num1 = ''
+    num2 = ''
+    list1 = []
+    list2 = []
+    common = []
+    hcf = ''
+    lcm = ''
+    hcf_form = FormElements()
+
+    if hcf_form.validate_on_submit():
+        show = True
+        num1 = hcf_form.int_input.data
+        num2 = hcf_form.int_input2.data
+
+        for x in range(1,num1+1):
+            if num1 % x == 0:
+                list1.append(x)
+
+        for x in range(1,num2+1):
+            if num2 % x == 0:
+                list2.append(x)
+
+        common = [value for value in list1 if value in list2]
+        hcf = max(common)
+        lcm = (num1*num2)/ hcf
+    return render_template('hcf_lcm.html',show = show, hcf_form=hcf_form,
+                            num1=num1, num2=num2, hcf=hcf, lcm=lcm)
+
+
+
+
+@app.route('/factorial of num', methods=['GET', 'POST'])
+def factorial():
+    show = False
+    num =''
+    factorial = 1
+
+    fact_form = FormElements()
+
+    if fact_form.validate_on_submit():
+        show = True
+        num = fact_form.int_input.data
+        for i in range(1, num+1):
+            factorial = factorial * i
+
+    return render_template('factorial.html', show=show,
+                            num=num, factorial=factorial, fact_form=fact_form)
+
+
+
+@app.route('/power of x', methods=['GET', 'POST'])
+def power():
+    show = False
+    x = ''
+    n = ''
+    ans = ''
+
+    power_form =FormElements()
+
+    if power_form.validate_on_submit():
+        show = True
+        x = power_form.int_input.data
+        n = power_form.int_input2.data
+        ans = x**n
+    return render_template('power.html', show=show, x=x, n=n, ans=ans,
+                            power_form=power_form)
 
 
 
