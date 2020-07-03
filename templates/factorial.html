@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="form2">
+
+<h3>Factorial of a Number</h3>
+
+<form class="aform" method="POST">
+  {{fact_form.hidden_tag()}}
+  <p class="label1">Number:</p>
+  {{fact_form.int_input(class="input")}}
+  {{fact_form.get(class= "btn")}}
+</form>
+
+<p class="show">
+{% if show %}
+{{num}}! = {{factorial}}
+</p>
+<a class="btn" href="{{url_for('factorial')}}">RESET</a>
+{% else %}
+
+{% endif %}
+</div>
+{% endblock %}

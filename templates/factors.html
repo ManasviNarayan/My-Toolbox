@@ -1,27 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<div class="form2">
 <h3>Factors of a number</h3>
-
-<form  method="POST">
+<form class="aform" method="POST">
 {{factor_form.hidden_tag()}}
-Number:
-{{factor_form.int_input(class="input is-primary input is-rounded has-text-centered")}}
-{{factor_form.get(class="button is-primary is-rounded is-outlined")}}
-
+<p class="label1">Number:</p>
+{{factor_form.int_input(class="input")}}
+{{factor_form.get(class="btn")}}
 </form>
 
-<div class="">
+
 
 {% if num %}
-Factors:<br>
-{% for item in fac %}
-{{item}},
-{% endfor %}
-<br>
-<a href="{{url_for('factors')}}">
-<input  type="button" class="button is-primary is-rounded is-outlined" name="reset" value="Reset">
-</a>
+<p class="show">Factors:<br>
+{{fac}}
+</p>
+<a class="btn" href="{{url_for('factors')}}">RESET</a>
 
 {% else %}
 

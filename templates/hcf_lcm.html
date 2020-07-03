@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bmi">
+
+<h3>Highest Common Factor and Lowest Common Multiple</h3>
+
+<form class="bform" method="POST">
+  {{hcf_form.hidden_tag()}}
+  <p class="label1">First number</p>
+  {{hcf_form.int_input(class= "input", id="input1")}}
+  <p class = "label2">Second number</p>
+  {{hcf_form.int_input2(class= "input", id="input2")}}
+  {{hcf_form.get(class="btn")}}
+</form>
+
+
+{% if show %}
+<p class="show">HCF = {{hcf}}<br>
+  <br>
+LCM = {{lcm}}</p>
+
+<a class="btn"href="{{url_for('hcf_lcm')}}">RESET</a>
+{% else %}
+{% endif %}
+
+</div>
+
+{% endblock %}

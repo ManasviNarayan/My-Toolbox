@@ -1,39 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="bmi">
+
 <h3>Divisibility Checker</h3>
-<form method='POST' >
+<form method='POST' class="bform">
   {{div_form.hidden_tag()}}
 
-  Check divisibility of
-  {{div_form.int_input(class="input is-primary input is-rounded has-text-centered")}}
-  <br>
-<br>
-  Check divisibility by
-  {{div_form.int_input2(class="input is-primary input is-rounded has-text-centered")}}
-<br>
-  <br>
-  {{div_form.check(class="button is-primary is-rounded is-outlined")}}
+  <p class="label1">Check divisibility of</p>
+  {{div_form.int_input(class="input", id="input1")}}
+  <p class="label2">Check divisibility by</p>
+  {{div_form.int_input2(class="input", id="input2")}}
+  {{div_form.check(class="btn")}}
   </form>
-<p>
+<p class="show">
 {% if run %}
 {% if div_num % div_by == 0 %}
 {{div_num}} is completely divisible by {{div_by}}
 {% else %}
 {{div_num}} is NOT completely divisible by {{div_by}}<br>
 Quotient = {{div_num//div_by}}<br>
-remainder = {{div_num % div_by}}
-{% endif %}
-<br>
-<a href="{{url_for('div_check')}}">
-<input  type="button" class="button is-primary is-rounded is-outlined" name="reset" value="Reset">
-</a>
-{% else %}
+Remainder = {{div_num % div_by}}
 {% endif %}
 </p>
-
-
-
-
+<a class="btn" href="{{url_for('div_check')}}">RESET</a>
+{% else %}
+{% endif %}
+</div>
 
 {% endblock %}

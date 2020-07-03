@@ -3,20 +3,24 @@
   <head>
     <meta charset="utf-8">
 
-    <title>My Math Toolbox</title>
-      <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>My Toolbox</title>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comfortaa:wght@700&family=Exo+2&family=Montez&family=Saira+Condensed:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 
   </head>
-  <body class="has-text-centered ">
-<div class=>
-    <h1 class=" main_head panel-heading has-text-primary has-text-centered">My Toolbox</h1>
+  <body class="">
+    <div class="base">
 
 
+    <header>
+        <h1 class='title'>My Toolbox</h1>
+    </header>
+
+<a href="{{url_for('index')}}" class="home_btn">
+  HOME
+</a>
 
 </div>
-<a href="{{url_for('index')}}">
-<input class=" button is-primary is-rounded is-outlined " type="submit" name="" value="HOME">
-</a>
 {% block content %}
 
 {%endblock%}

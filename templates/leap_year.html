@@ -2,30 +2,30 @@
 
 {% block content %}
 
+<div class="form2">
+
+
 <h3>Check Leap Year</h3>
 
-<form method="POST">
+<form class="aform" method="POST">
   {{leap_form.hidden_tag()}}
-  Enter Year:
-  {{leap_form.int_input()}}
-  <br>
-  {{leap_form.check()}}
+  <p class="label1">Enter Year:</p>
+  {{leap_form.int_input(class="input")}}
+  {{leap_form.check(class="btn")}}
 </form>
-
+<p class="show">
 {% if show %}
 {% if check %}
-<p>{{year}} is a leap year!</p>
+{{year}} is a leap year!
 {% else %}
-<p>{{year}} is not a leap year!</p>
+{{year}} is not a leap year!
 {% endif %}
-<br>
-<a href="{{url_for('leap')}}">
-<input  type="button" class="button is-primary is-rounded is-outlined" name="reset" value="Reset">
-</a>
+</p>
+<a  class="btn" href="{{url_for('leap')}}">RESET</a>
 {% else %}
 
 {% endif %}
 
-
+</div>
 
 {% endblock %}

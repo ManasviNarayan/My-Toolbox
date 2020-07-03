@@ -1,31 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="form2">
 
-<h3>Fibonacci number series</h3>
+<h3>Fibonacci Number Series</h3>
 
- <form class="" method="POST">
+ <form class="aform" method="POST">
    {{fib_form.hidden_tag()}}
-   Get the series up to terms
+   <p class="label1">Get the series up to terms?</p>
 
-   {{fib_form.int_input()}}
-   <br>
+   {{fib_form.int_input(class="input")}}
 
-   {{fib_form.get()}}
+   {{fib_form.get(class="btn")}}
 
  </form>
 
 
 {% if terms %}
-{% for items in fib_list %}
-{{items}}
-
-{% endfor %}
-<br>
-<a href="{{url_for('fib_nums')}}">
-<input  type="button" class="button is-primary is-rounded is-outlined" name="reset" value="Reset">
-</a>
+<p class="show">{{fib_list}}</p>
+<a class="btn" href="{{url_for('fib_nums')}}">RESET</a>
 {% else %}
-
 {%endif%}
+
+
+</div>
 {% endblock %}

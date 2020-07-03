@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="bmi">
+  <h3>Find "x" to the power "n"</h3>
+
+  <form class="bform"  method="POST">
+    {{power_form.hidden_tag()}}
+    <p class="label1">Base(x):</p>
+    {{power_form.int_input(class="input", id="input1")}}
+    <p class="label2">Power(n):</p>
+    {{power_form.int_input2(class="input", id="input2")}}
+    {{power_form.get(class="btn")}}
+  </form>
+
+
+  <p class="show">
+  {% if show %}
+  {{x}}^{{n}} = {{ans}}
+  </p>
+
+  <a class="btn" href="{{url_for('power')}}">RESET</a>
+  {% else %}
+  {% endif %}
+
+</div>
+
+{% endblock %}
