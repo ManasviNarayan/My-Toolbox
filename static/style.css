@@ -1,0 +1,266 @@
+body{
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.base{
+  background: #0047ab;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows:minmax(30px, auto);
+  grid-template-areas:
+  "h h h h h h h"
+  "h h h h h h h"
+  "h h h h h h h"
+  ". . . b . . .";
+}
+
+h1{
+  font-family: 'Montez', cursive;
+  color: white;
+  font-size: 50px;
+}
+
+p{
+  font-family: 'Comfortaa', cursive;
+
+}
+
+header{
+  background: #0047ab;
+  grid-area: h;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.home_btn{
+  grid-area: b;
+  text-decoration: none;
+  border: 3.5px solid #A9A9A9;
+  border-bottom: 0;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  color: white;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 5px;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.home_btn:hover{
+  background: #A9A9A9;
+  color: white;
+}
+footer{
+  background: #A9A9A9;
+  position: fixed;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+#foot{
+  font-family: 'Abril Fatface', cursive;
+  color: white;
+}
+
+.index{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(70px, auto);
+  grid-template-areas:
+  "w w w w "
+  "f f f f";
+
+}
+
+h3{
+  grid-area: w;
+  border-top: 10px solid #A9A9A9;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  font-family: 'Abril Fatface', cursive;
+  color: #0047ab;
+
+}
+
+.index_form{
+  grid-area: f;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(25px, auto);
+  grid-gap: 10px;
+  grid-template-areas:
+  "q q q q q"
+  ". s s a ."
+}
+
+.ques{
+  grid-area: q;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.select{
+  grid-area: s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+  background: #0047ab;
+  color: white;
+  border: 0;
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 14px;
+
+}
+.option{
+  height: 100px;
+  overflow-y: scroll;
+}
+option{
+  color: #0047ab;
+  background:#e6e6e6;
+
+}
+
+
+.btn{
+  text-decoration: none;
+  grid-area: a;
+  border: 2px solid #0047ab;
+  border-radius: 20px;
+  color: #0047ab;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 10px;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.btn:hover{
+  background: #0047ab;
+  color: #e6e6e6
+}
+
+.bmi{
+  border-left: 3px solid #a9a9a9;
+  border-right: 3px solid #a9a9a9;
+  grid-area: f;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(25px, auto);
+  grid-gap: 10px;
+  grid-template-areas:
+  "w w w w w"
+  "bform bform bform bform bform"
+  "show show show show show"
+  ". . a . ."
+  ". . . . .";
+}
+
+.bform{
+  grid-area: bform;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(25px, auto);
+  grid-gap: 10px;
+  grid-template-areas:
+  "l1 l1 . i1 i1"
+  "l2 l2 . i2 i2"
+  ". . a . .";
+
+}
+
+.show{
+  grid-area: show;
+}
+
+.label1{
+  grid-area: l1;
+}
+.label2{
+  grid-area: l2;
+}
+
+#input1{
+  grid-area: i1;
+}
+#input2{
+  grid-area: i2;
+}
+
+.input{
+  grid-area: i;
+  padding: 10px;
+  border-radius: 10px;
+  background: #e6e6e6;
+  border: 2px solid #0047ab;
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 14px;
+
+
+}
+.form2{
+border-left: 3px solid #a9a9a9;
+border-right: 3px solid #a9a9a9;
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-auto-rows: minmax(25px, auto);
+grid-gap: 10px;
+grid-template-areas:
+"w w w w w"
+"aform aform aform aform aform"
+"show show show show show"
+". . a . ."
+". . . . .";
+}
+
+.aform{
+  grid-area: aform;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(25px, auto);
+  grid-gap: 10px;
+  grid-template-areas:
+  ". . l1 . ."
+  ". . i . ."
+  ". . a . .";
+
+}
